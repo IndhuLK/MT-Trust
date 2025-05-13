@@ -1,13 +1,11 @@
 import React from 'react'
-import SupportPower from './SupportPower'
-import CharitySection from './CharitySection'
-import OurFeature from './OurFeature'
-import OurGallery from './OurGallery'
+import DonatePP from './DonatePP'
+import ArticleSection from './ArticleSection'
 import AchievementsImage from "../../assets/HomeIMG/Achievements.jpg";
 import { Link } from 'react-router-dom';
 
 
-const About = () => {
+const Blogs = () => {
   return (
     <div>
       <div className="relative w-full h-[400px]">
@@ -26,18 +24,16 @@ const About = () => {
 
       {/* Center Text */}
       <div className="relative z-20 h-full flex flex-col justify-center items-center text-white text-center">
-        <h1 className="text-4xl font-bold">About Us</h1>
+        <h1 className="text-4xl font-bold">Blogs</h1>
         <p className="text-lg mt-2">
            <Link to="/" className="hover:underline">Home</Link> / 
-           <Link to="/about" className="hover:underline"> About</Link></p>
+           <Link to="/blogs" className="hover:underline"> Blogs</Link></p>
       </div>
     </div>
-      <SupportPower />
-      <CharitySection />
-      <OurFeature />
-      <OurGallery />
+        <DonatePP />
+        <ArticleSection />
     </div>
   )
 }
 
-export default About
+export default Blogs

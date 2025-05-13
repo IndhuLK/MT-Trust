@@ -1,26 +1,41 @@
 import React from "react";
 import AchievementsImage from "../../assets/HomeIMG/Achievements.jpg";
 import GetInTouch from "./GetInTouch";
+import { Link } from "react-router-dom";
 
 const ContactUs = () => {
   return (
     <div>
-    <section className="relative w-full h-[80vh] overflow-hidden">
-      {/* Background Image Full Width */}
-      <div
-        className="absolute inset-0 bg-cover bg-center z-0"
-        style={{ backgroundImage: `url(${AchievementsImage})` }}
-      />
+      <div className="relative w-full h-[400px]">
+        {/* Background Image */}
+        <img
+          src={AchievementsImage}
+          alt="Banner"
+          className="absolute inset-0 w-full h-full object-cover z-0"
+        />
 
-      {/* Centered Diagonal Blue Shape */}
-      <div className="absolute inset-0 flex z-10">
-        <div className="bg-[#003B73] md:rounded-br-[50px] text-white px-8 py-12 md:pl-6 md:pr-10 relative clip-slant w-[50%] max-w-4xl text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-3">Contact Us</h1>
-          <p className="text-sm md:text-base opacity-90">Home / Contact</p>
+        {/* Left Blue Overlay */}
+        <div className="absolute top-0 left-0 w-[35%] h-full bg-[#06457A] clip-left z-10"></div>
+
+        {/* Right Blue Overlay */}
+        <div className=""></div>
+
+        {/* Center Text */}
+        <div className="relative z-20 h-full flex flex-col justify-center items-center text-white text-center">
+          <h1 className="text-4xl font-bold">Contact</h1>
+          <p className="text-lg mt-2">
+            <Link to="/" className="hover:underline">
+              Home
+            </Link>{" "}
+            /
+            <Link to="/contact" className="hover:underline">
+              {" "}
+              Contact
+            </Link>
+          </p>
         </div>
       </div>
-    </section>
-    <GetInTouch />
+      <GetInTouch />
     </div>
   );
 };
