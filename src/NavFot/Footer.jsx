@@ -9,7 +9,7 @@ import Logo from "../assets/Logo.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-white  border-t border-gray-200">
+    <footer className="bg-white  border-t border-gray-200 font-Poppins">
       <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3">
         {/* Logo + Text */}
         <div className="flex items-start gap-2 text-blue-900">
@@ -26,19 +26,19 @@ const Footer = () => {
           <h4 className="font-semibold mb-4 text-lg">Links</h4>
           <ul className="space-y-2 text-md text-blue-900">
             <li>
-              <a href="#">About Us</a>
+              <a href="/">Home</a>
             </li>
             <li>
-              <a href="#">Services</a>
+              <a href="/about">About Us</a>
             </li>
             <li>
-              <a href="#">Home</a>
+              <a href="/services"> Services</a>
             </li>
             <li>
-              <a href="#">Blog</a>
+              <a href="/newstittle" >News Tittle</a>
             </li>
             <li>
-              <a href="#">Areas We Serve</a>
+              <a href="/contact">Contact</a>
             </li>
           </ul>
         </div>

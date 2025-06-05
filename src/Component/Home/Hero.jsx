@@ -1,45 +1,81 @@
 import React from "react";
 import HeroIMG from "../../assets/HomeIMG/HeroIMG.jpg";
+import Logo from "../../assets/Logo.png";
+import CountUp from "react-countup";
+import { FaAward, FaUsers, FaRegClock, FaBullseye } from "react-icons/fa";
 
+const stats = [
+  {
+    icon: <FaRegClock size={30} />,
+    value: 35,
+    label: "Years Of Success",
+    suffix: "+",
+  },
+  {
+    icon: <FaBullseye size={30} />,
+    value: 88,
+    label: "Project Complete",
+    suffix: "K",
+  },
+  { icon: <FaUsers size={30} />, value: 10, label: "Health Care", suffix: "M" },
+  {
+    icon: <FaAward size={30} />,
+    value: 32,
+    label: "Winning Awards",
+    suffix: "+",
+  },
+];
 const Hero = () => {
   return (
-    <div className="relative bg-[#03457B] text-white min-h-screen overflow-visible">
+    <div className="font-Poppins relative bg-white text-[#03457B] min-h-screen overflow-visible">
       {/* Left side decorative image */}
       <img
-        src="/assets/left-decor.png"
+        src={Logo}
         alt="decor"
-        className="absolute top-0 left-0 z-0"
+        className="absolute top-0 left-15 z-0 w-36 h-36"
       />
 
       {/* Main Content */}
-      <div className="relative z-10 container mx-auto px-4 md:px-12 py-20 grid md:grid-cols-2 gap-10 items-center">
+      <div className="relative top-10 z-10 container mx-auto px-4 md:px-12 py-30 grid md:grid-cols-2 gap-10 items-center">
         {/* Text Section */}
         <div className="space-y-6">
-          <h1 className="text-3xl md:text-3xl lg:text-4xl font-bold leading-normal cursor-pointer">
+          <h1 className=" text-3xl md:text-3xl lg:text-4xl font-bold leading-normal cursor-pointer">
             <span className="block relative group ">
-              <span className="hover:underline hover:decoration-yellow-400 hover:underline-offset-4 transition-all">
+              <span className="relative inline-block border-b-3 border-transparent group-hover:border-yellow-400 transition-all duration-300 ease-in-out">
                 MOTHER THERASA
               </span>
             </span>
-            <span className="hover:underline hover:decoration-yellow-400 hover:underline-offset-4 transition-all">SOCIAL SERVICE AND</span> <br />
-            <span className="hover:underline hover:decoration-yellow-400 hover:underline-offset-4 transition-all">DEVELOPMENT SERVICES</span>
+            <span className="block relative group ">
+              <span className="relative inline-block border-b-3 border-transparent group-hover:border-yellow-400 transition-all duration-300 ease-in-outl">
+                SOCIAL SERVICE AND
+              </span>{" "}
+            </span>
+            <span className="block relative group ">
+              <span className="relative inline-block border-b-3 border-transparent group-hover:border-yellow-400 transition-all duration-300 ease-in-out">
+                DEVELOPMENT SERVICES
+              </span>
+            </span>
           </h1>
-          <p className="text-gray-200 leading-relaxed font-semibold">
+          <p className="text-slate-800 leading-relaxed ">
             Our organization has been working with under privilege, is advantage
             and downtrodden community and thus the staff has a good rapport with
             all the people like HIV affected community, single women,
             differently abled people, women victims of domestic violence etc...
           </p>
-          <p className="text-gray-200 leading-relaxed font-semibold">
+          <p className="text-slate-800 leading-relaxed">
             Comprehensive health care for disabled people, mentally retarded and
             for elderly improving public health in rural areas promotion and
             protection of rural arts & cultural heritage, provide education and
             training on climate change and biodiversity by creating modern
             community gardens.
           </p>
-          <button className="bg-yellow-400 text-blue-900 px-5 py-2 rounded-md font-semibold hover:bg-yellow-500 transition">
+          {/* <button className="bg-yellow-400 text-blue-900 px-5 py-2 rounded-md font-semibold hover:bg-yellow-500 transition">
             About Us
-          </button>
+          </button>*/}
+          <p className="font-bold">
+            {" "}
+            “INTENSE LOVE DOES NOT MEASURE, IT JUST GIVES”
+          </p>
         </div>
 
         {/* Image Section with glass effect */}
@@ -63,7 +99,7 @@ const Hero = () => {
           />
 
           {/* Contact Us Button */}
-          <div className="absolute -bottom-30 right-0 flex items-center space-x-2 z-20">
+          {/*<div className="absolute -bottom-30 right-0 flex items-center space-x-2 z-20">
             <button className="bg-yellow-400 text-blue-900 px-4 py-2 rounded-md font-semibold hover:bg-yellow-500 transition">
               Contact Us
             </button>
@@ -83,14 +119,41 @@ const Hero = () => {
                 />
               </svg>
             </span>
-          </div>
+          </div>*/}
         </div>
       </div>
 
-      {/* Bottom Center White Rectangle Box */}
-      <div className="p-5 m-2">
-      <div className="absolute -bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 w-[80%] md:w-[70%] h-[80px] bg-white rounded-2xl shadow-lg z-20"></div>
-    </div>
+      <div className="w-full px-4 sm:px-6 md:px-12 sm:py-6 md:py-12 relative font-Poppins">
+        {/* White background container */}
+        <div className="mx-auto w-full sm:w-[90%] md:w-[85%] bg-white rounded-2xl shadow-2xl py-6 px-4 md:px-8 z-10 relative">
+          {/* Stats Cards in one row on desktop and stacked on mobile */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+            {stats.map((item, index) => (
+              <div
+                key={index}
+                className="flex items-center bg-white  p-4 relative"
+              >
+                {/* Icon */}
+                <div className="bg-[#03457B] p-3 rounded-full text-white flex items-center justify-center">
+                  {item.icon}
+                </div>
+
+                {/* Text */}
+                <div className="ml-3">
+                  <h2 className="text-lg font-bold text-[#03457B]">
+                    <CountUp
+                      end={item.value}
+                      duration={5}
+                      suffix={item.suffix || ""}
+                    />
+                  </h2>
+                  <p className="text-gray-600 text-sm">{item.label}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

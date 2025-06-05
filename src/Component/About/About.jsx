@@ -3,17 +3,19 @@ import SupportPower from './SupportPower'
 import CharitySection from './CharitySection'
 import OurFeature from './OurFeature'
 import OurGallery from './OurGallery'
-import AchievementsImage from "../../assets/HomeIMG/Achievements.jpg";
+import img from "../../assets/HomeIMG/img-18.jpg";
 import { Link } from 'react-router-dom';
+import TrustMember from './TrustMember'
 
 
 const About = () => {
+  
   return (
     <div>
       <div className="relative w-full h-[400px]">
       {/* Background Image */}
       <img
-        src={AchievementsImage}
+        src={img}
         alt="Banner"
         className="absolute inset-0 w-full h-full object-cover z-0"
       />
@@ -28,11 +30,12 @@ const About = () => {
       <div className="relative z-20 h-full flex flex-col justify-center items-center text-white text-center">
         <h1 className="text-4xl font-bold">About Us</h1>
         <p className="text-lg mt-2">
-           <Link to="/" className="hover:underline">Home</Link> / 
+           <Link to="/" className="hover:underline text-black font-bold hover:bg-white px-2 py-1">Home</Link> / 
            <Link to="/about" className="hover:underline"> About</Link></p>
       </div>
     </div>
       <SupportPower />
+      <TrustMember />
       <CharitySection />
       <OurFeature />
       <OurGallery />

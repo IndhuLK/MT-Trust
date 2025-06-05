@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import Decore from "../../assets/HomeIMG/Decore.png";
 import Small from "../../assets/HomeIMG/Small.png";
-import GirlImage from "../../assets/HomeIMG/Kindness.jpg";
+import img from "../../assets/HomeIMG/img-28.jpg";
 import Decore2 from "../../assets/HomeIMG/Decore2.png";
+import DonationPopup from "../../NavFot/DonationPopup";
+
 
 const WhatWeDo = () => {
+  const [showPopup, setShowPopup] = useState(false); 
   return (
-    <section className="relative bg-white py-20 px-6 md:px-20 overflow-hidden">
+    <section className="relative bg-white py-20 px-6 md:px-20 overflow-hidden font-Poppins">
       {/* Top-left and bottom-right decor */}
       <img
         src={Decore}
@@ -50,41 +53,44 @@ const WhatWeDo = () => {
             protection, advancement in sustainable organic agriculture through
             empowering women and farming community...
           </p>
-          <button className="bg-yellow-400 hover:bg-yellow-500 px-5 py-2 text-sm font-semibold rounded text-blue-900">
+          <button onClick={() => setShowPopup(true)}
+          className="bg-yellow-400 hover:bg-yellow-500 px-5 py-2 text-sm font-semibold rounded text-blue-900">
             Donate Now
           </button>
         </div>
 
         {/* Right Image with Custom 3-Slice Style */}
-        <div className="relative w-[300px] h-[300px] mx-auto mt-10 md:mt-0">
+        <div className=" w-auto h-auto mx-auto">
           {/* Slice 1 */}
-          <div className="absolute w-24 h-60 rounded-full overflow-hidden rotate-[45deg] left-0 top-5">
+          <div className="rounded-full ">
             <img
-              src={GirlImage}
+              src={img}
               alt="Slice 1"
-              className="object-cover w-[300px] h-[300px] -translate-x-24"
+              className="object-cover w-full h-full"
             />
           </div>
 
-          {/* Slice 2 (center slice) */}
+          {/* Slice 2 (center slice) 
           <div className="absolute w-24 h-60 rounded-full overflow-hidden rotate-[45deg] left-8 top-0 z-10">
             <img
               src={GirlImage}
               alt="Slice 2"
               className="object-cover w-[300px] h-[300px] -translate-x-16"
             />
-          </div>
+          </div>*/}
 
-          {/* Slice 3 */}
+          {/* Slice 3 
           <div className="absolute w-24 h-60 rounded-full overflow-hidden rotate-[45deg] left-16 top-5">
             <img
               src={GirlImage}
               alt="Slice 3"
               className="object-cover w-[300px] h-[300px] -translate-x-8"
             />
-          </div>
+          </div>*/}
         </div>
       </div>
+      {/* Conditional rendering of DonationPopup */}
+      {showPopup && <DonationPopup onClose={() => setShowPopup(false)}/>}
     </section>
   );
 };

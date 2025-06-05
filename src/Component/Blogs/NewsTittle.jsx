@@ -5,7 +5,7 @@ import AchievementsImage from "../../assets/HomeIMG/Achievements.jpg";
 import { Link } from 'react-router-dom';
 
 
-const Blogs = () => {
+const NewsTittle = () => {
   return (
     <div>
       <div className="relative w-full h-[400px]">
@@ -24,10 +24,10 @@ const Blogs = () => {
 
       {/* Center Text */}
       <div className="relative z-20 h-full flex flex-col justify-center items-center text-white text-center">
-        <h1 className="text-4xl font-bold">Blogs</h1>
+        <h1 className="text-4xl font-bold">News Tittle</h1>
         <p className="text-lg mt-2">
            <Link to="/" className="hover:underline">Home</Link> / 
-           <Link to="/blogs" className="hover:underline"> Blogs</Link></p>
+           <Link to="/newstittle" className="hover:underline"> News Tittle </Link></p>
       </div>
     </div>
         <DonatePP />
@@ -36,4 +36,4 @@ const Blogs = () => {
   )
 }
 
-export default Blogs
+export default NewsTittle

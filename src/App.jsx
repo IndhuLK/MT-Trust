@@ -5,8 +5,9 @@ import Home from "./Component/Home/Home";
 import Footer from "./NavFot/Footer";
 import ContactUs from "./Component/Contact/ContactUs";
 import Services from "./Component/Services/Services";
-import Blogs from "./Component/Blogs/Blogs";
+import Blogs from "./Component/Blogs/NewsTittle";
 import About from "./Component/About/About";
+import NewsTittle from "./Component/Blogs/NewsTittle";
 
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/services" element={<Services/>} />
-          <Route path="/blogs" element={<Blogs/>} />
+          <Route path="/newstittle" element={<NewsTittle/>} />
         </Routes>
       </div>
       <Footer />

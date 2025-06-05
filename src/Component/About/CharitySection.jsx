@@ -1,10 +1,31 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { FaHeart, FaEye } from "react-icons/fa";
 import { IoShieldCheckmarkSharp } from "react-icons/io5";
-import Image1 from "../../assets/HomeIMG/Image1.jpg";
+import Image1 from "../../assets/HomeIMG/img-19.jpg";
 import { GiNotebook } from "react-icons/gi";
 
 const CharitySection = () => {
+   const [donationPercent, setDonationPercent] = useState(0);
+  const [medicalPercent, setMedicalPercent] = useState(0);
+
+  useEffect(() => {
+    const donationTarget = 75;
+    const medicalTarget = 90;
+
+    const interval = setInterval(() => {
+      setDonationPercent(prev => {
+        if (prev >= donationTarget) return donationTarget;
+        return prev + 1;
+      });
+
+      setMedicalPercent(prev => {
+        if (prev >= medicalTarget) return medicalTarget;
+        return prev + 1;
+      });
+    }, 20); // Adjust speed here
+
+    return () => clearInterval(interval);
+  }, []);
   return (
     
     <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -32,8 +53,9 @@ const CharitySection = () => {
                 Our Mission
               </h3>
               <p className="text-sm text-gray-600 mb-2">
-                Content Content Content. Content Content Content xfb Content
-                contentcontent.
+                Our mission is to uplift underprivileged communities by providing access to quality healthcare, promoting education, and supporting environmental sustainability. 
+        We are committed to building self-reliant societies through innovative programs, capacity-building initiatives, and partnerships that encourage long-term growth and well-being.
+    
               </p>
             </div>
           </div>
@@ -44,35 +66,44 @@ const CharitySection = () => {
                 Our Vision
               </h3>
               <p className="text-sm text-gray-600 mb-2">
-                Content Content Content. Content Content Content xfb Content
-                contentcontent.
+                We envision a world where every individual, regardless of their background, has the opportunity to live a healthy, dignified, and empowered life. 
+        Our vision is to create inclusive communities that thrive on compassion, sustainability, and social justice — where collective efforts lead to lasting transformation.
+      
               </p>
             </div>
           </div>
         </div>
 
         {/* Progress Bars */}
-        <div className="space-y-4">
-          <div>
-            <div className="flex justify-between text-sm mb-1">
-              <span>Donations</span>
-              <span>75%</span>
-            </div>
-            <div className="bg-gray-200 rounded-full h-3">
-              <div className="bg-yellow-400 h-3 rounded-full w-[75%]"></div>
-            </div>
-          </div>
-
-          <div>
-            <div className="flex justify-between text-sm mb-1">
-              <span>Medical Help</span>
-              <span>90%</span>
-            </div>
-            <div className="bg-gray-200 rounded-full h-3">
-              <div className="bg-yellow-400 h-3 rounded-full w-[90%]"></div>
-            </div>
-          </div>
+        <div className="space-y-4 max-w-xl mx-auto">
+      {/* Donations */}
+      <div>
+        <div className="flex justify-between text-sm mb-1">
+          <span>Donations</span>
+          <span>{donationPercent}%</span>
         </div>
+        <div className="bg-gray-200 rounded-full h-3">
+          <div
+            className="bg-yellow-400 h-3 rounded-full transition-all duration-300"
+            style={{ width: `${donationPercent}%` }}
+          ></div>
+        </div>
+      </div>
+
+      {/* Medical Help */}
+      <div>
+        <div className="flex justify-between text-sm mb-1">
+          <span>Medical Help</span>
+          <span>{medicalPercent}%</span>
+        </div>
+        <div className="bg-gray-200 rounded-full h-3">
+          <div
+            className="bg-yellow-400 h-3 rounded-full transition-all duration-300"
+            style={{ width: `${medicalPercent}%` }}
+          ></div>
+        </div>
+      </div>
+    </div>
       </div>
 
       {/* Right Side with Images and List */}

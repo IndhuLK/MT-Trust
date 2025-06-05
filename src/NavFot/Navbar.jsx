@@ -13,15 +13,16 @@ const Navbar = () => {
     { name: "Home", path: "/" },
     { name: "About Us", path: "/about" },
     { name: "Services", path: "/services" },
-    { name: "Blogs", path: "/blogs" },
+    { name: "News Tittle", path: "/newstittle" },
     { name: "Contact", path: "/contact" },
     
   ];
 
   return (
     <>
-      <nav className="relative w-full flex items-center justify-between px-20 py-2 bg-[#06457A] z-10">
+      <nav className="relative w-full flex items-center justify-between px-20 py-2 bg-[#06457A] z-10 font-Poppins">
         <div className=" text-yellow-400 font-bold text-3xl">MTSSDS</div>
+        
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-10">

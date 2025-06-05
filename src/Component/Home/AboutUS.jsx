@@ -9,7 +9,7 @@ import Dot from "../../assets/HomeIMG/Dot.png";
 
 const AboutUS = () => {
   return (
-    <section className="relative px-4 md:px-20 py-20 bg-white overflow-hidden">
+    <section className="relative px-4 md:px-20 py-20 bg-white overflow-hidden font-Poppins">
       <div className="max-w-screen-xl mx-auto grid md:grid-cols-2 gap-10">
         {/* Left-side decorative image */}
         <img
@@ -45,7 +45,7 @@ const AboutUS = () => {
             />
           </div>
 
-          <p className="text-gray-800">
+          <p className="text-slate-800">
             The Mother Therasa Social Service and Development Society [MTSSDS]
             Team comprises of development professionals and social activists
             presently Chaired by Mr. K. SUBBURAJ the retired Assistant Director
@@ -102,7 +102,7 @@ const AboutUS = () => {
       </div>
       {/* Full-width bottom paragraph */}
       <div className="w-full mt-10 bg-white md:mt-2 ">
-        <p className="text-gray-800 leading-relaxed ">
+        <p className="text-gray-800 leading-relaxed">
           It changes its goals during the passage of time on need based
           sustainable approach based development and some have it worked in
           disasters relief measures like Tsunami 2004 and Geja cyclone in 2018
