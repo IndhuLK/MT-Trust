@@ -114,11 +114,18 @@ const ArticleSection = () => {
     ],
     "August 2022": [
       {
-        title: "Educational support",
+        title: "Founders day celebration",
         content: [
-          "Educational support to college students for their project work A.Rubin a blind student studied at Govt Arts college Nandanam chennai",
+          "Founders day celebration Educational monetary support to poor student for her higher education",
         ],
-        images: ["/src/assets/HomeIMG/img-36.jpeg"],
+        images: ["/src/assets/HomeIMG/img-37.jpg"],
+      },
+      {
+        title: "76th Independence Day",
+        content: [
+          "Mother Theresa Social Service and Development Society Manapparai observed 76th Independence Day in association with Panchayat Union Middle School Inam Reddiy apatti pudur . Mr Lavanga reddy hoisted tricolor national flag in the presence of due respect with thayin manikodi song by school students. Various competitions were held for students and awarded prizes. President Mr Subburaj spoke among students remembering sacrifices made by national patriotic leaders in the freedom movement . Secretary Mr Selvaraj handed over the monthly support cheque to volunteer of Education at Door step scheme. President and Secretary of wishdom lions club Manapparai along with members of SMC we’re notable participants. The school headmaster Mr Kaliyaperumal made necessary arrangements and honoured all the participants. The event ended with national song.",
+        ],
+        images: ["/src/assets/HomeIMG/img-48.jpg"],
       },
     ],
     "June 2022": [
