@@ -20,7 +20,7 @@ const DonatePP = () => {
   });
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-12">
+    <div className="max-w-7xl mx-auto px-4 py-12 font-family">
       <h1 className="text-4xl font-semibold mb-6">Donating Poor People.</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

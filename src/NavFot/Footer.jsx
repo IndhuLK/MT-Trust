@@ -9,7 +9,7 @@ import Logo from "../assets/Logo.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-white  border-t border-gray-200 font-Poppins">
+    <footer className="bg-white  border-t border-gray-200 font-family">
       <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3">
         {/* Logo + Text */}
         <div className="flex items-start gap-2 text-blue-900">
@@ -35,7 +35,7 @@ const Footer = () => {
               <a href="/services"> Services</a>
             </li>
             <li>
-              <a href="/newstittle" >News Tittle</a>
+              <a href="/newstittle">News</a>
             </li>
             <li>
               <a href="/contact">Contact</a>
@@ -53,7 +53,7 @@ const Footer = () => {
             can.
           </p>
           <p className="text-md font-semibold text-blue-900 mt-10">
-            +91 31835 61921
+            +91 99445 67984
           </p>
         </div>
       </div>

@@ -9,7 +9,7 @@ import DonationPopup from "../../NavFot/DonationPopup";
 const WhatWeDo = () => {
   const [showPopup, setShowPopup] = useState(false); 
   return (
-    <section className="relative bg-white py-20 px-6 md:px-20 overflow-hidden font-Poppins">
+    <section className="relative bg-white py-20 px-6 md:px-20 overflow-hidden font-family">
       {/* Top-left and bottom-right decor */}
       <img
         src={Decore}

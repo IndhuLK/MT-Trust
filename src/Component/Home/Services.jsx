@@ -57,7 +57,7 @@ const services = [
 
 const Services = () => {
   return (
-    <section className="relative py-10 px-20 bg-white font-Poppins">
+    <section className="relative py-10 px-20 bg-white font-family">
       {/* Wrapper for Decor and Services */}
 
       {/* Left Decor */}

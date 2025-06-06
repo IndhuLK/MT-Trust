@@ -8,7 +8,7 @@ const SupportPower = () => {
   const [showPopup, setShowPopup] = useState(false); 
 
   return (
-    <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-6">
+    <div className="font-family max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-6">
       
       {/* Left Side Images */}
       <div className="relative w-full h-[350px]">
@@ -29,7 +29,7 @@ const SupportPower = () => {
 
       {/* Right Side Content */}
       <div>
-        <h4 className="text-gray-700 font-medium text-xl mb-2">About Us --------</h4>
+        <h4 className="text-gray-700 font-medium text-xl mb-2 ">About Us --------</h4>
         <h2 className="text-4xl font-bold text-gray-800 mb-4">
           Your Support Is Really Powerful.
         </h2>

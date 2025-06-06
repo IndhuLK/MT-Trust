@@ -27,7 +27,7 @@ const stats = [
 ];
 const Hero = () => {
   return (
-    <div className="font-Poppins relative bg-white text-[#03457B] min-h-screen overflow-visible">
+    <div className="font-family relative bg-white text-[#03457B] min-h-screen overflow-visible">
       {/* Left side decorative image */}
       <img
         src={Logo}

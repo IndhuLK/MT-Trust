@@ -7,7 +7,7 @@ import { PlayCircle } from "lucide-react";
 const OurAchievements = () => {
   return (
     <section
-      className="relative w-full h-auto bg-white overflow-hidden object-cover font-Poppins"
+      className="relative w-full h-auto bg-white overflow-hidden object-cover font-family"
       style={{
         backgroundImage: `url(${img})`,
         backgroundSize: 'cover',

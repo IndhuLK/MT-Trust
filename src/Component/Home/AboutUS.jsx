@@ -9,7 +9,7 @@ import Dot from "../../assets/HomeIMG/Dot.png";
 
 const AboutUS = () => {
   return (
-    <section className="relative px-4 md:px-20 py-20 bg-white overflow-hidden font-Poppins">
+    <section className="relative px-4 md:px-20 py-20 bg-white overflow-hidden font-family">
       <div className="max-w-screen-xl mx-auto grid md:grid-cols-2 gap-10">
         {/* Left-side decorative image */}
         <img

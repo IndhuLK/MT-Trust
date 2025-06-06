@@ -37,7 +37,7 @@ const DonationPopup = ({ onClose }) => {
   };
 
   return (
-    <div className="fixed inset-0 bg-white/70 backdrop-blur-x bg-opacity-50 z-50 flex justify-center items-center">
+    <div className="font-family fixed inset-0 bg-white/70 backdrop-blur-x bg-opacity-50 z-50 flex justify-center items-center">
       <div className="bg-[#E6F0FA]  p-4 rounded-lg shadow-lg w-[600px] max-h-[95vh] overflow-y-auto">
         <button onClick={onClose} className="absolute top-3 right-4 text-2xl font-bold text-gray-600">&times;</button>
         

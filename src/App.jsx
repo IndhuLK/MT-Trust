@@ -5,9 +5,9 @@ import Home from "./Component/Home/Home";
 import Footer from "./NavFot/Footer";
 import ContactUs from "./Component/Contact/ContactUs";
 import Services from "./Component/Services/Services";
-import Blogs from "./Component/Blogs/NewsTittle";
+import Blogs from "./Component/News/NewsTittle";
 import About from "./Component/About/About";
-import NewsTittle from "./Component/Blogs/NewsTittle";
+import NewsTittle from "./Component/News/NewsTittle";
 
 
 function App() {
@@ -29,3 +29,4 @@ function App() {
 }
 
 export default App;
+//font - inter roboto helvetica

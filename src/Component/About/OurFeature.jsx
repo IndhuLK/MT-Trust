@@ -32,7 +32,7 @@ const CircularStat = ({ icon, value, label, duration = 4000 }) => {
   const strokeDashoffset = circumference - (progress / 100) * circumference;
 
   return (
-    <div className="bg-[#F0FAF9] rounded-md w-56 py-8 flex flex-col items-center shadow-sm">
+    <div className="font-family bg-[#F0FAF9] rounded-md w-56 py-8 flex flex-col items-center shadow-sm">
       <div className="relative mb-4 h-20 w-20">
         <svg className="absolute top-0 left-0 w-full h-full" viewBox="0 0 80 80">
           <circle

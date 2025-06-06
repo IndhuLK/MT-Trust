@@ -12,7 +12,7 @@ const About = () => {
   
   return (
     <div>
-      <div className="relative w-full h-[400px]">
+      <div className="relative w-full h-[400px] font-family">
       {/* Background Image */}
       <img
         src={img}
@@ -21,17 +21,15 @@ const About = () => {
       />
 
       {/* Left Blue Overlay */}
-      <div className="absolute top-0 left-0 w-[35%] h-full bg-[#06457A] clip-left z-10"></div>
+      <div className="absolute top-0 left-0 w-[35%] h-full bg-[#06457A] z-10"></div>
 
-      {/* Right Blue Overlay */}
-      <div className=""></div>
-
-      {/* Center Text */}
-      <div className="relative z-20 h-full flex flex-col justify-center items-center text-white text-center">
+      {/* Text aligned to the left inside the overlay */}
+      <div className="absolute top-1/2 left-10 -translate-y-1/2 z-20 text-white text-left max-w-md">
         <h1 className="text-4xl font-bold">About Us</h1>
         <p className="text-lg mt-2">
-           <Link to="/" className="hover:underline text-black font-bold hover:bg-white px-2 py-1">Home</Link> / 
-           <Link to="/about" className="hover:underline"> About</Link></p>
+          <Link to="/" className="hover:underline">Home</Link> /{" "}
+          <Link to="/about" className="hover:underline">About</Link>
+        </p>
       </div>
     </div>
       <SupportPower />

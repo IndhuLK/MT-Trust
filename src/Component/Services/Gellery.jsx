@@ -65,7 +65,7 @@ const services = [
 
 const Gellery = () => {
   return (
-    <div className="max-w-7xl mx-auto px-4 py-12">
+    <div className="max-w-7xl mx-auto px-4 py-12 font-family">
       <p className="text-md text-gray-500 mb-1">Latest Services________</p>
       <h2 className="text-4xl font-semibold mb-8 leading-relaxed">
         Find The Popular Services<br />

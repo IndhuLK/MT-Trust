@@ -1,98 +1,94 @@
-import React from 'react';
+import React from "react";
+import { Mail, MapPin, Phone } from "lucide-react";
+import avatar from "../../assets/Logo.png"; // Add your image here
 
 const GetInTouch = () => {
   return (
-    <>
-      <section className="px-6 py-10 md:px-20 bg-white">
-        {/* Heading */}
-        <div className="mb-10">
-          <p className="text-sm font-medium text-gray-500">Get In Touch</p>
-          <h2 className="text-2xl md:text-3xl font-semibold mt-1">
-            Send Me A Message
-          </h2>
-        </div>
+    <section className="px-6 py-5 md:px-20 bg-white font-sans ">
+      {/* Heading */}
+      <div className="text-center mb-10 text-black">
+        <h2 className="text-3xl font-bold">Get In Touch</h2>
+        {/*<p className="mt-2">
+          Thank you for your interest in our services. Please fill out <br />
+          the form below or e-mail us at <a href="mailto:hello@demoemail.com" className="underline">hello@demoemail.com</a>
+        </p>*/}
+      </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {/* Contact info box */}
-          <div className="bg-blue-200 p-6 rounded-md">
+      <div className="bg-white rounded-lg shadow-2xl drop-shadow-xl shadow-blue-600/40 p-6 grid md:grid-cols-2 gap-10 items-center mb-10">
+        {/* Contact info with avatar */}
+        <div className="text-gray-700 space-y-6">
+          <div className="flex justify-center">
+            <img
+              src={avatar}
+              alt="hi"
+              className="w-34 h-34 rounded-full shadow"
+            />
+          </div>
+
+          <div className="space-y-4 text-center md:text-left text-gray-700">
             <h3 className="text-2xl font-bold text-black">President</h3>
-            <h4 className="text-lg font-bold text-blue-700 mt-1">
-              K. SUBBURAJ
-            </h4>
-            <p className="text-sm text-gray-700 mb-4 font-bold">
+            <h4 className="text-xl font-bold text-blue-700">K. SUBBURAJ</h4>
+            <p className="font-semibold text-sm">
               B.Sc (Agriculture) PG DIP.RD
             </p>
 
-            <p className="text-gray-800">
-              <span className="font-semibold text-md">Location</span> : 10/90 North
-              Lakshmipuram, Viralimalai Road, Manapparai, Trichy (Dt),
-              Tamilnadu, India – 621306
-            </p>
+            <div className="flex items-start justify-center md:justify-start gap-3 mt-4">
+              <MapPin className="text-green-500 mt-1" size={30} />
+              <span>
+                <span className="font-semibold">Location</span> : 10/190 North
+                Lakshmipuram, Viralimalai Road, Manapparai, Trichy (Dt),
+                Tamilnadu (State), India - 621306
+              </span>
+            </div>
 
-            <p className="text-sm text-gray-800 mt-2">
-              <span className="font-semibold text-md">Phone</span> : +91 98745 61230
-            </p>
-            <p className="text-sm text-gray-800">
-              <span className="font-semibold text-md">Email</span> : info@mtssds.org
-            </p>
+            <div className="flex items-center justify-center md:justify-start gap-3">
+              <Phone className="text-green-500" size={18} />
+              <span>
+                <span className="font-semibold">Phone</span> : +91 98745 61230
+              </span>
+            </div>
+
+            <div className="flex items-center justify-center md:justify-start gap-3">
+              <Mail className="text-green-500" size={18} />
+              <span>
+                <span className="font-semibold">Email</span> : info@mtssds.org
+              </span>
+            </div>
           </div>
-
-          {/* Contact form */}
-          <form className="md:col-span-2 space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <input
-                type="text"
-                placeholder="Your First Name"
-                className="bg-blue-100 p-3 rounded outline-none"
-              />
-              <input
-                type="text"
-                placeholder="Name"
-                className="bg-blue-100 p-3 rounded outline-none"
-              />
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <input
-                type="email"
-                placeholder="Your Email"
-                className="bg-blue-100 p-3 rounded outline-none "
-              />
-              <input
-                type="tel"
-                placeholder="+880"
-                className="bg-blue-100 p-3 rounded outline-none"
-              />
-            </div>
-            <textarea
-              placeholder="Type Your Message Here..."
-              rows="5"
-              className="bg-blue-100 p-3 rounded w-full outline-none"
-            />
-            <button
-              type="submit"
-              className="bg-yellow-400 text-blue-800 px-6 py-2 rounded font-semibold"
-            >
-              Send Message
-            </button>
-          </form>
         </div>
-      </section>
 
-      {/* ✅ Google Map Section */}
-      <section className="mt-10 px-6 md:px-20">
-        <iframe
-          title="Google Map"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3914.281465511425!2d78.433056!3d10.584167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baae7f888ec741b%3A0xdeadbeef12345678!2sManapparai%2C%20Tamil%20Nadu%20621306%2C%20India!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
-          width="100%"
-          height="400"
-          style={{ border: 0 }}
-          allowFullScreen=""
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          className="rounded-md shadow-md"
-        ></iframe>
-      </section>
-    </>
+        {/* Contact form */}
+        <form className="space-y-4">
+          <h1 className="text-2xl font-bold">Send Me a Meassage</h1>
+          <input
+            type="text"
+            placeholder="Full Name*"
+            className="w-full p-3 border border-gray-300 rounded outline-none"
+          />
+          <input
+            type="tel"
+            placeholder="Phone*"
+            className="w-full p-3 border border-gray-300 rounded outline-none"
+          />
+          <input
+            type="email"
+            placeholder="Email*"
+            className="w-full p-3 border border-gray-300 rounded outline-none"
+          />
+          <textarea
+            placeholder="Message"
+            rows="4"
+            className="w-full p-3 border border-gray-300 rounded outline-none"
+          ></textarea>
+          <button
+            type="submit"
+            className="w-full cursor-pointer bg-[#06457A] hover:bg-black hover:text-amber-300 text-white py-2 rounded font-semibold"
+          >
+            SUBMIT
+          </button>
+        </form>
+      </div>
+    </section>
   );
 };
 
