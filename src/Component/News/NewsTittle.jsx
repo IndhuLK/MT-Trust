@@ -1,39 +1,49 @@
-import React from "react";
+import React, { useEffect } from "react";
 import DonatePP from "./DonatePP";
 import ArticleSection from "./ArticleSection";
 import AchievementsImage from "../../assets/HomeIMG/Achievements.jpg";
 import { Link } from "react-router-dom";
-import img from "../../assets/HomeIMG/img-18.jpg";
+import img from "../../assets/HomeIMG/img-51.jpg";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const NewsTittle = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
   return (
     <div>
-      <div className="relative w-full h-[400px] font-family">
-        {/* Background Image */}
-        <img
-          src={img}
-          alt="Banner"
-          className="absolute inset-0 w-full h-full object-cover z-0"
-        />
+      <div className="relative w-full h-auto md:h-[400px] font-family flex flex-col md:flex-row">
+        {/* Left Side - Blue Background with Text */}
+        <div
+          className="w-full md:w-[35%] bg-[#06457A] text-white flex items-center justify-center px-6 py-8 md:py-0"
+          data-aos="fade-up"
+          data-aos-duration="3000"
+        >
+          <div className="text-center md:text-left">
+            <h1 className="text-3xl md:text-4xl font-bold">News</h1>
+            <p className="text-base md:text-lg mt-2">
+              <Link to="/" className="hover:underline">
+                Home
+              </Link>{" "}
+              /{" "}
+              <Link to="/newstittle" className="hover:underline">
+                News
+              </Link>
+            </p>
+          </div>
+        </div>
 
-        {/* Left Blue Overlay */}
-        <div className="absolute top-0 left-0 w-[35%] h-full bg-[#06457A] z-10"></div>
-
-        {/* Text aligned to the left inside the overlay */}
-        <div className="absolute top-1/2 left-15 -translate-y-1/2 z-20 text-white text-left max-w-md">
-          <h1 className="text-4xl font-bold">News</h1>
-          <p className="text-lg mt-2">
-            <Link to="/" className="hover:underline">
-              Home
-            </Link>{" "}
-            /{" "}
-            <Link to="/newstittle" className="hover:underline">
-              News Title
-            </Link>
-          </p>
+        {/* Right Side - Full Image (On top in mobile view) */}
+        <div
+          className="w-full md:w-[65%] h-full md:h-[400px] overflow-hidden"
+          data-aos="fade-up"
+          data-aos-duration="3000"
+        >
+          <img src={img} alt="Banner" className="w-full h-full object-cover" />
         </div>
       </div>
-      <DonatePP />
+      {/** <DonatePP />*/}
       <ArticleSection />
     </div>
   );

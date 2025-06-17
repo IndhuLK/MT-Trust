@@ -88,8 +88,7 @@ const Footer = () => {
 
       {/* Bottom Copyright */}
       <div className="text-center py-4 text-sm text-gray-500 border-t border-gray-200">
-        © {new Date().getFullYear()} 2025 Copyright by TEKNOSPOT. All rights
-        reserved.
+        © {new Date().getFullYear()} Copyright by MTSSDS. Developed by Tekno Spot.
       </div>
     </footer>
   );

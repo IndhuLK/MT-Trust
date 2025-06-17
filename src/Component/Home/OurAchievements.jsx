@@ -1,7 +1,7 @@
 import React from 'react'
 import Decore from "../../assets/HomeIMG/Decore.png";
 import Small from "../../assets/HomeIMG/Small.png";
-import img from "../../assets/HomeIMG/img-20.jpg"
+import img from "../../assets/HomeIMG/img-52.jpg"
 import { PlayCircle } from "lucide-react";
 
 const OurAchievements = () => {

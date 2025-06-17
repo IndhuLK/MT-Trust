@@ -1,44 +1,54 @@
-import React from 'react'
-import SupportPower from './SupportPower'
-import CharitySection from './CharitySection'
-import OurFeature from './OurFeature'
-import OurGallery from './OurGallery'
-import img from "../../assets/HomeIMG/img-18.jpg";
-import { Link } from 'react-router-dom';
-import TrustMember from './TrustMember'
-
+import React from "react";
+import SupportPower from "./SupportPower";
+import CharitySection from "./CharitySection";
+import OurFeature from "./OurFeature";
+import OurGallery from "./OurGallery";
+import img from "../../assets/HomeIMG/img-24.jpg";
+import { Link } from "react-router-dom";
+import TrustMember from "./TrustMember";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const About = () => {
-  
   return (
     <div>
-      <div className="relative w-full h-[400px] font-family">
-      {/* Background Image */}
-      <img
-        src={img}
-        alt="Banner"
-        className="absolute inset-0 w-full h-full object-cover z-0"
-      />
+      <div className="relative w-full h-auto md:h-[400px] font-family flex flex-col md:flex-row">
+        {/* Left Side - Blue Background with Text */}
+        <div
+          className="w-full md:w-[35%] bg-[#06457A] text-white flex items-center justify-center px-6 py-8 md:py-0"
+          data-aos="fade-up"
+          data-aos-duration="3000"
+        >
+          <div className="text-center md:text-left">
+            <h1 className="text-3xl md:text-4xl font-bold">About</h1>
+            <p className="text-base md:text-lg mt-2">
+              <Link to="/" className="hover:underline">
+                Home
+              </Link>{" "}
+              /{" "}
+              <Link to="/about" className="hover:underline">
+                About
+              </Link>
+            </p>
+          </div>
+        </div>
 
-      {/* Left Blue Overlay */}
-      <div className="absolute top-0 left-0 w-[35%] h-full bg-[#06457A] z-10"></div>
-
-      {/* Text aligned to the left inside the overlay */}
-      <div className="absolute top-1/2 left-10 -translate-y-1/2 z-20 text-white text-left max-w-md">
-        <h1 className="text-4xl font-bold">About Us</h1>
-        <p className="text-lg mt-2">
-          <Link to="/" className="hover:underline">Home</Link> /{" "}
-          <Link to="/about" className="hover:underline">About</Link>
-        </p>
+        {/* Right Side - Full Image (On top in mobile view) */}
+        <div
+          className="w-full md:w-[65%] h-full md:h-[400px] overflow-hidden"
+          data-aos="fade-up"
+          data-aos-duration="3000"
+        >
+          <img src={img} alt="Banner" className="w-full h-full object-cover" />
+        </div>
       </div>
-    </div>
       <SupportPower />
       <TrustMember />
       <CharitySection />
       <OurFeature />
       <OurGallery />
     </div>
-  )
-}
+  );
+};
 
-export default About
+export default About;

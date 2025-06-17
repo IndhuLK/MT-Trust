@@ -1,159 +1,140 @@
-import React from "react";
-import HeroIMG from "../../assets/HomeIMG/HeroIMG.jpg";
+import React, { useEffect } from "react";
+import HeroImg from "../../assets/HomeIMG/HeroIMG.jpg";
+import HImg from "../../assets/HomeIMG/img-51.jpg";
+import HImg2 from "../../assets/HomeIMG/img-49.jpg";
+import HImg3 from "../../assets/HomeIMG/img-55.jpg";
 import Logo from "../../assets/Logo.png";
-import CountUp from "react-countup";
-import { FaAward, FaUsers, FaRegClock, FaBullseye } from "react-icons/fa";
+import StatsSection from "./StatsSection";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import {
+  MdOutlineKeyboardArrowLeft,
+  MdOutlineKeyboardArrowRight,
+} from "react-icons/md";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
-const stats = [
+// 🔸 Custom Arrow Components
+const CustomPrevArrow = ({ onClick }) => {
+  return (
+    <div
+      className="absolute left-4 bottom-8 md:bottom-1/2 z-10 p-2 bg-white rounded-full shadow cursor-pointer"
+      onClick={onClick}
+    >
+      <MdOutlineKeyboardArrowLeft className="text-2xl text-[#03457B]" />
+    </div>
+  );
+};
+
+const CustomNextArrow = ({ onClick }) => {
+  return (
+    <div
+      className="absolute right-4 bottom-8 md:bottom-1/2 z-10 p-2 bg-white rounded-full shadow cursor-pointer"
+      onClick={onClick}
+    >
+      <MdOutlineKeyboardArrowRight className="text-2xl text-[#03457B]" />
+    </div>
+  );
+};
+
+const slides = [
   {
-    icon: <FaRegClock size={30} />,
-    value: 35,
-    label: "Years Of Success",
-    suffix: "+",
+    image: HImg,
+    title1: "MOTHER THERASA SOCIAL SERVICE AND DEVELOPMENT SOCIETY",
+    desc: "Serving with Love and Compassion",
+    para: "INTENSE LOVE DOES NOT MEASURE, IT JUST GIVES.",
+    button: "Know More",
   },
   {
-    icon: <FaBullseye size={30} />,
-    value: 88,
-    label: "Project Complete",
-    suffix: "K",
+    image: HImg2,
+    title1: "Empowering the Downtrodden",
+    title2: "With Kindness and Care",
+    desc: "Transforming lives through education and healthcare.",
+    para: "We Rise by Lifting Others with Heart and Hope.",
+    button: "Our Services",
   },
-  { icon: <FaUsers size={30} />, value: 10, label: "Health Care", suffix: "M" },
   {
-    icon: <FaAward size={30} />,
-    value: 32,
-    label: "Winning Awards",
-    suffix: "+",
+    image: HImg3,
+    title1: "Join Our Mission",
+    title2: "To Make a Better Tomorrow",
+    desc: "Together we can build stronger communities.",
+    para: "One Mission. Endless Possibilities. A Brighter Tomorrow.",
+    button: "Join Us",
   },
 ];
+
 const Hero = () => {
+  const settings = {
+    dots: false,
+    arrows: true,
+    infinite: true,
+    autoplay: true,
+    speed: 800,
+    autoplaySpeed: 5000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    prevArrow: <CustomPrevArrow />,
+    nextArrow: <CustomNextArrow />,
+  };
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,           
+      easing: 'ease-in-out',    
+      once: true,               
+    });
+  }, []);
+
   return (
-    <div className="font-family relative bg-white text-[#03457B] min-h-screen overflow-visible">
-      {/* Left side decorative image */}
+    <div className="relative text-[#03457B] overflow-hidden "
+    data-aos="fade-up"
+        data-aos-duration="1000"
+  data-aos-easing="ease-in-out">
+      {/* Logo */}
       <img
         src={Logo}
-        alt="decor"
-        className="absolute top-0 left-15 z-0 w-36 h-36"
+        alt="Logo"
+        className="absolute top-4 left-4 z-30 w-24 h-24"
       />
 
-      {/* Main Content */}
-      <div className="relative top-10 z-10 container mx-auto px-4 md:px-12 py-30 grid md:grid-cols-2 gap-10 items-center">
-        {/* Text Section */}
-        <div className="space-y-6">
-          <h1 className=" text-3xl md:text-3xl lg:text-4xl font-bold leading-normal cursor-pointer">
-            <span className="block relative group ">
-              <span className="relative inline-block border-b-3 border-transparent group-hover:border-yellow-400 transition-all duration-300 ease-in-out">
-                MOTHER THERASA
-              </span>
-            </span>
-            <span className="block relative group ">
-              <span className="relative inline-block border-b-3 border-transparent group-hover:border-yellow-400 transition-all duration-300 ease-in-outl">
-                SOCIAL SERVICE AND
-              </span>{" "}
-            </span>
-            <span className="block relative group ">
-              <span className="relative inline-block border-b-3 border-transparent group-hover:border-yellow-400 transition-all duration-300 ease-in-out">
-                DEVELOPMENT SERVICES
-              </span>
-            </span>
-          </h1>
-          <p className="text-slate-800 leading-relaxed ">
-            Our organization has been working with under privilege, is advantage
-            and downtrodden community and thus the staff has a good rapport with
-            all the people like HIV affected community, single women,
-            differently abled people, women victims of domestic violence etc...
-          </p>
-          <p className="text-slate-800 leading-relaxed">
-            Comprehensive health care for disabled people, mentally retarded and
-            for elderly improving public health in rural areas promotion and
-            protection of rural arts & cultural heritage, provide education and
-            training on climate change and biodiversity by creating modern
-            community gardens.
-          </p>
-          {/* <button className="bg-yellow-400 text-blue-900 px-5 py-2 rounded-md font-semibold hover:bg-yellow-500 transition">
-            About Us
-          </button>*/}
-          <p className="font-bold">
-            {" "}
-            “INTENSE LOVE DOES NOT MEASURE, IT JUST GIVES”
-          </p>
-        </div>
+      {/* Slider */}
+      <Slider {...settings}>
+        {slides.map((slide, index) => (
+          <section
+            key={index}
+            className="relative w-screen h-screen overflow-hidden text-white"
+          >
+            {/* Image as background */}
+            <img
+              src={slide.image}
+              alt="Hero Slide"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-black/50 z-0" />
 
-        {/* Image Section with glass effect */}
-        <div className="relative w-[250px] h-[250px] mx-auto rounded-full">
-          {/* Glass-style circular background */}
-          <div
-            className="absolute -inset-13 w-[350px] h-[350px] rounded-full overflow-hidden z-0 border border-white/20 backdrop-blur-xl shadow-xl"
-            style={{
-              backgroundImage: `url(${HeroIMG})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              opacity: 0.8,
-            }}
-          ></div>
+            {/* Content */}
+            <div className="relative z-10 flex flex-col justify-center items-start h-full px-4 sm:px-10 md:px-20 max-w-3xl">
+              <h2 className="text-4xl md:text-5xl font-bold">
+                <span>{slide.title1}</span>
+                <br />
+                <span>{slide.title2}</span>
+              </h2>
+              <p className="text-xl font-semibold mt-4">{slide.desc}</p>
+              <p className="text-md text-gray-200 mt-2 uppercase">
+                {slide.para}
+              </p>
+              <button className="mt-6 bg-[#03457B] hover:bg-blue-900 px-6 py-2 rounded-md text-white font-medium">
+                {slide.button}
+              </button>
+            </div>
+          </section>
+        ))}
+      </Slider>
 
-          {/* Circular image */}
-          <img
-            src={HeroIMG}
-            alt="Volunteers"
-            className="relative w-full h-full object-cover rounded-full z-10"
-          />
-
-          {/* Contact Us Button */}
-          {/*<div className="absolute -bottom-30 right-0 flex items-center space-x-2 z-20">
-            <button className="bg-yellow-400 text-blue-900 px-4 py-2 rounded-md font-semibold hover:bg-yellow-500 transition">
-              Contact Us
-            </button>
-            <span className="bg-yellow-400 p-2 rounded-full">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="blue"
-                className="w-5 h-5"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-                />
-              </svg>
-            </span>
-          </div>*/}
-        </div>
-      </div>
-
-      <div className="w-full px-4 sm:px-6 md:px-12 sm:py-6 md:py-12 relative font-Poppins">
-        {/* White background container */}
-        <div className="mx-auto w-full sm:w-[90%] md:w-[85%] bg-white rounded-2xl shadow-2xl py-6 px-4 md:px-8 z-10 relative">
-          {/* Stats Cards in one row on desktop and stacked on mobile */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-            {stats.map((item, index) => (
-              <div
-                key={index}
-                className="flex items-center bg-white  p-4 relative"
-              >
-                {/* Icon */}
-                <div className="bg-[#03457B] p-3 rounded-full text-white flex items-center justify-center">
-                  {item.icon}
-                </div>
-
-                {/* Text */}
-                <div className="ml-3">
-                  <h2 className="text-lg font-bold text-[#03457B]">
-                    <CountUp
-                      end={item.value}
-                      duration={5}
-                      suffix={item.suffix || ""}
-                    />
-                  </h2>
-                  <p className="text-gray-600 text-sm">{item.label}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
+      {/* Stats Section */}
+      <StatsSection />
     </div>
   );
 };

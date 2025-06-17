@@ -4,17 +4,17 @@ const posts = [
   {
     title: "Charity, Expectation Vs. Reality",
     category: "Homeless",
-    image: "https://via.placeholder.com/80",
+    image: "/src/assets/HomeIMG/img-1.jpg",
   },
   {
     title: "This Week’s Top Stories About.",
     category: "Medical",
-    image: "https://via.placeholder.com/80",
+    image: "/src/assets/HomeIMG/img-8.jpg",
   },
   {
     title: "Why You Should Focus On Charity",
     category: "Food",
-    image: "https://via.placeholder.com/80",
+    image: "/src/assets/HomeIMG/Image2.jpg",
   },
 ];
 
