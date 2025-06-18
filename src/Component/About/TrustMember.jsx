@@ -1,7 +1,7 @@
 import React from "react";
 import SubbuImage from "../../assets/HomeIMG/Subburaj.jpg";
 import bala from "../../assets/HomeIMG/Bala.jpg";
-import Kind from "../../assets/HomeIMG/Kindness.jpg";
+import Kind from "../../assets/HomeIMG/img-57.jpg";
 
 const TrustMember = () => {
   return (
@@ -69,7 +69,7 @@ const TrustMember = () => {
         <img
           src={Kind}
           alt="Kindness"
-          className="rounded-lg w-full object-cover h-64 md:h-[80vh]"
+          className=" w-full object-contain h-64 md:h-[80vh] rounded-2xl"
         />
       </div>
     </div>

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Gellery from "./Gellery";
 import AchievementsImage from "../../assets/HomeIMG/Achievements.jpg";
 import { Link } from "react-router-dom";
-import img from "../../assets/HomeIMG/img-50.jpg";
+import img from "../../assets/HomeIMG/img-55.jpg";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -12,7 +12,7 @@ const Services = () => {
   }, []);
   return (
     <div>
-      <div className="relative w-full h-auto md:h-[400px] font-family flex flex-col md:flex-row">
+      <div className="relative w-full font-family flex flex-col md:flex-row h-auto md:h-[500px]">
         {/* Left Side - Blue Background with Text */}
         <div
           className="w-full md:w-[35%] bg-[#06457A] text-white flex items-center justify-center px-6 py-8 md:py-0"
@@ -35,11 +35,11 @@ const Services = () => {
 
         {/* Right Side - Full Image (On top in mobile view) */}
         <div
-          className="w-full md:w-[65%] h-full md:h-[400px] overflow-hidden"
+          className="w-full md:w-[65%] h-[200px] md:h-auto overflow-hidden"
           data-aos="fade-up"
           data-aos-duration="3000"
         >
-          <img src={img} alt="Banner" className="w-full h-full object-cover" />
+          <img src={img} alt="Banner" className="w-full  h-auto object-contain" />
         </div>
       </div>
       <Gellery />

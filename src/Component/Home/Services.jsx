@@ -57,7 +57,8 @@ const services = [
 
 const Services = () => {
   return (
-    <section className="relative py-10 px-20 bg-white font-family">
+    <section className="relative py-10 px-20 bg-white font-family"
+    data-aos="fade-up">
       {/* Wrapper for Decor and Services */}
 
       {/* Left Decor */}
@@ -65,16 +66,21 @@ const Services = () => {
         src={Decore}
         alt="decor"
         className="absolute top-4 left-0 w-12 h-20 md:w-12 md:h-20"
+        data-aos="zoom-in"
+        data-aos-delay="100"
       />
       {/* Right Decor */}
       <img
         src={Decore}
         alt="decor"
         className="absolute bottom-4 right-0 w-12 h-20 md:w-12 md:h-20"
+        data-aos="zoom-in"
+        data-aos-delay="200"
       />
 
       <div className="relative max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold mb-10">
+        <h2 className="text-3xl md:text-4xl font-bold mb-10"
+        data-aos="fade-up">
           Our services <br /> <span className="text-black">we Provide!</span>
         </h2>
 
@@ -88,6 +94,7 @@ const Services = () => {
                   ? "bg-[#03457B] text-white"
                   : "bg-white text-black hover:bg-[#03457B] hover:text-white"
               }`}
+              
             >
               {/* Service Icon */}
               <div className="mb-4 ">{service.icon}</div>

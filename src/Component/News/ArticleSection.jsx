@@ -1,4 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import {
+  MdOutlineZoomIn,
+  MdClose,
+  MdArrowForwardIos,
+  MdArrowBackIos,
+} from "react-icons/md";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const posts = [
   {
@@ -20,6 +28,16 @@ const posts = [
 
 const ArticleSection = () => {
   const [selectedArchive, setSelectedArchive] = useState("November 2024");
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [currentImage, setCurrentImage] = useState(0);
+  const [lightboxImages, setLightboxImages] = useState([]);
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }, []);
 
   const archiveContent = {
     "November 2024": [
@@ -190,14 +208,10 @@ const ArticleSection = () => {
           "Mr.Balakrishnan Project Officer",
           "Mr.Kaliyaperumal School Headmaster and local VIPs",
         ],
-        images: [
-          "/src/assets/HomeIMG/img-42.jpg",
-        ],
+        images: ["/src/assets/HomeIMG/img-42.jpg"],
       },
       {
-        content: [
-          "Few Memorable snaps as follows :-)",
-        ],
+        content: ["Few Memorable snaps as follows :-)"],
         images: [
           "/src/assets/HomeIMG/img-43.jpg",
           "/src/assets/HomeIMG/img-44.jpg",
@@ -211,9 +225,7 @@ const ArticleSection = () => {
       {
         title: "Covid 19 online Doctor Consultations",
         content: [""],
-        images: [
-          "/src/assets/HomeIMG/covid.jpg",
-        ],
+        images: ["/src/assets/HomeIMG/covid.jpg"],
       },
     ],
   };
@@ -236,12 +248,76 @@ const ArticleSection = () => {
     "June 2021",
   ];
 
+  const openLightbox = (images, index) => {
+    setLightboxImages(images);
+    setCurrentImage(index);
+    setLightboxOpen(true);
+  };
+
+  const nextImage = () => {
+    setCurrentImage((prev) => (prev + 1) % lightboxImages.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImage((prev) =>
+      prev === 0 ? lightboxImages.length - 1 : prev - 1
+    );
+  };
+
+  const closeLightbox = () => {
+    setLightboxOpen(false);
+  };
+
   return (
     <div className="font-family max-w-7xl mx-auto px-6 py-5 grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
+      {/* Lightbox */}
+      {lightboxOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center"
+          data-aos="zoom-in"
+        >
+          <div
+            className="absolute inset-0 bg-black/50 z-0"
+            onClick={closeLightbox}
+          ></div>
+          <div className="relative z-10 w-full h-full p-4 flex items-center justify-center">
+            <button
+              className="absolute top-4 right-4 text-white text-3xl"
+              onClick={closeLightbox}
+            >
+              <MdClose />
+            </button>
+            <button
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white text-3xl"
+              onClick={prevImage}
+            >
+              <MdArrowBackIos />
+            </button>
+            <img
+              src={lightboxImages[currentImage]}
+              alt="Lightbox Preview"
+              className="w-auto h-auto max-w-[90vw] max-h-[90vh] object-contain rounded-lg shadow-lg"
+            />
+            <button
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white text-3xl"
+              onClick={nextImage}
+            >
+              <MdArrowForwardIos />
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* Left: Article Content */}
       <div className="md:col-span-2 space-y-8">
         {archiveContent[selectedArchive]?.map((item, index) => (
-          <div key={index} className="space-y-4">
+          <div
+            key={index}
+            className="space-y-4"
+            data-aos="fade-right"
+            data-aos-offset="300"
+            data-aos-easing="ease-in-sine"
+          >
             <h2 className="text-2xl font-semibold text-gray-800 leading-snug mb-2">
               {item.title}
             </h2>
@@ -251,14 +327,26 @@ const ArticleSection = () => {
               </p>
             ))}
             {item.images && item.images.length > 0 && (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+              <div
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4"
+                data-aos="fade-up"
+                data-aos-anchor-placement="center-bottom"
+              >
                 {item.images.map((img, idx) => (
-                  <img
+                  <div
                     key={idx}
-                    src={img}
-                    alt={`image-${idx}`}
-                    className="w-full h-auto rounded-md object-cover shadow"
-                  />
+                    className="relative overflow-hidden group rounded-md shadow cursor-pointer"
+                    onClick={() => openLightbox(item.images, idx)}
+                  >
+                    <img
+                      src={img}
+                      alt={`image-${idx}`}
+                      className="w-full h-auto object-cover transform transition-transform duration-300 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
+                      <MdOutlineZoomIn className="text-white text-4xl" />
+                    </div>
+                  </div>
                 ))}
               </div>
             )}
@@ -267,7 +355,11 @@ const ArticleSection = () => {
       </div>
 
       {/* Right Sidebar */}
-      <div className="space-y-20">
+      <div className="space-y-20"
+      data-aos="fade-left"
+            data-aos-offset="300"
+            data-aos-easing="ease-in-sine"
+     >
         {/* Archives */}
         <div className="bg-blue-100 p-4 shadow-sm">
           <h3 className="text-md mb-10 text-3xl font-bold">Archives</h3>

@@ -1,13 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Decore from "../../assets/HomeIMG/Decore.png";
 import Small from "../../assets/HomeIMG/Small.png";
 import img from "../../assets/HomeIMG/img-28.jpg";
 import Decore2 from "../../assets/HomeIMG/Decore2.png";
 import DonationPopup from "../../NavFot/DonationPopup";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const WhatWeDo = () => {
+
   const [showPopup, setShowPopup] = useState(false); 
+  useEffect(() => {
+        AOS.init({
+          duration: 1000,           
+          easing: 'ease-in-out',    
+          once: true,               
+        });
+      }, []);
+
   return (
     <section className="relative bg-white py-20 px-6 md:px-20 overflow-hidden font-family">
       {/* Top-left and bottom-right decor */}
@@ -31,14 +41,16 @@ const WhatWeDo = () => {
       <div className="max-w-screen-xl mx-auto grid md:grid-cols-2 items-center gap-10 relative z-10">
         {/* Left Content */}
         <div className="space-y-6">
-          <div className="flex items-center ">
+          <div className="flex items-center "
+          data-aos="fade-up">
             
             <span className="text-yellow-500 font-semibold text-xl">
               - What we do
             </span>
             <img src={Small} alt="icon" className="w-6 h-6 ml-50 rotate-60" />
           </div>
-          <h2 className="text-4xl font-bold text-gray-900">
+          <h2 className="text-4xl font-bold text-gray-900"
+          data-aos="fade-up">
             Your Kindness <br /> their
             <span className="underline decoration-yellow-400 underline-offset-10 transition-all">
               {" "}
@@ -46,7 +58,9 @@ const WhatWeDo = () => {
             </span>
             !
           </h2>
-          <p className="text-gray-700 leading-relaxed">
+          <p className="text-gray-700 leading-relaxed"
+          data-aos="fade-right"
+     data-aos-anchor-placement="top-center">
             The MTSSDS seeks to provide comprehensive and holistic development
             to rural and urban population according to sustainable development
             goals (SDG) with special focus to health care and environmental
@@ -62,7 +76,9 @@ const WhatWeDo = () => {
         {/* Right Image with Custom 3-Slice Style */}
         <div className=" w-auto h-auto mx-auto">
           {/* Slice 1 */}
-          <div className="rounded-full ">
+          <div className="rounded-full "
+          data-aos="fade-left"
+     data-aos-anchor-placement="top-center">
             <img
               src={img}
               alt="Slice 1"

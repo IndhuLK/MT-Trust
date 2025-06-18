@@ -49,8 +49,8 @@ const GetInTouch = () => {
                   <p className="text-sm">+91 99445 67984</p>
                 </div>
               </div>
-              <div className="flex items-start gap-4 shadow-xl px-4 py-4 rounded-lg bg-white/40 hover:scale-105">
-                <MapPin className="text-yellow-500 mt-1" />
+              <div className="flex items-start gap-4 shadow-xl px-4 py-4 rounded-lg bg-white/40 hover:scale-105 w-full max-w-md md:max-w-lg">
+                <MapPin className="text-yellow-500  mt-1 w-20 h-8 md:w-10 md:h-8" />
                 <div>
                   <a
                     href="https://www.google.com/maps/place/Mother+Therasa+Social+Service+and+Development+Society+(MTSSDS)/@10.6072763,78.4279113,94m/data=!3m1!1e3!4m6!3m5!1s0x3baa6f6acb4d0d55:0x44ea74f1ce0c3a33!8m2!3d10.607244!4d78.4279582!16s%2Fg%2F11x72jfxnm"
@@ -58,8 +58,8 @@ const GetInTouch = () => {
                     rel="noopener noreferrer"
                     className="text-sm"
                   >
-                    <p className="font-semibold">Location</p>
-                    Tiruchirappalli, Tamilnadu
+                    <p className="font-semibold">Address</p>
+                    Address: 10/190 North Lakshmipuram Viralimalai road Manapparai Trichy (Dt) Tamilnadu (state) India pin 621306
                   </a>
                 </div>
               </div>

@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Decore from "../../assets/HomeIMG/Decore.png";
 import Image4 from "../../assets/HomeIMG/Image4.jpg";
 import Image2 from "../../assets/HomeIMG/Image2.jpg";
 import Image3 from "../../assets/HomeIMG/Image3.jpg";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const slides = [
   {
@@ -33,6 +35,14 @@ const ExclusiveEvents = () => {
 
   const nextSlide = () => setCurrent((prev) => (prev + 1) % total);
   const prevSlide = () => setCurrent((prev) => (prev - 1 + total) % total);
+  
+  useEffect(() => {
+      AOS.init({
+        duration: 1000,           
+        easing: 'ease-in-out',    
+        once: true,               
+      });
+    }, []);
 
   return (
     <section className="font-Poppins relative bg-[#004987] text-white px-6 py-10 overflow-hidden">
@@ -50,7 +60,8 @@ const ExclusiveEvents = () => {
       />
 
       {/* Title */}
-      <h2 className="text-3xl md:text-4xl font-bold px-20 mb-6">
+      <h2 className="text-3xl md:text-4xl font-bold px-20 mb-6"
+      data-aos="fade-down-right">
         Our <span className="text-yellow-300">Exclusive Events</span>
         <br />
         we are always Provide!
@@ -73,7 +84,8 @@ const ExclusiveEvents = () => {
       </div>
 
       {/* Main Image */}
-      <div className="max-w-6xl mx-auto mb-6">
+      <div className="max-w-6xl mx-auto mb-6"
+      data-aos="fade-up-right">
         <img
           src={slides[current].image}
           alt="Event"
@@ -84,7 +96,8 @@ const ExclusiveEvents = () => {
 
       {/* Bottom Content Section */}
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-        <div className="max-w-2xl">
+        <div className="max-w-2xl"
+        data-aos="zoom-in-up">
           <h3 className="text-xl font-semibold mb-2">
             {slides[current].title}
           </h3>
